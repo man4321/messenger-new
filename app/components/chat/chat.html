@@ -1,0 +1,60 @@
+
+<div layout="row" ng-cloak style="height:100%" ng-app="myApp">
+    <section layout="row" flex>
+    <md-toolbar style="background-color:#0000CD">
+      <div layout layout-align="start center">
+    <md-icon>
+    <div class="head">
+      <span>FACEBOOK MESSENGER</span>
+    </div>
+  </md-icon>
+  </div>
+    </md-toolbar>
+  </section>
+  </div>
+<div layout="column" ng-cloak style="height:100%" ng-app="myApp">
+  <section layout="row" flex>
+    <md-sidenav class="md-sidenav-left" md-component-id="left"
+                md-disable-backdrop="" md-whiteframe="4" md-is-locked-open="true" style="max-height:100%; overflow-x: hidden; background-color: white; width:25%;height: -webkit-fill-available">
+      <md-toolbar class="md-theme-indigo" style="background-color:#87CEEB;">
+          <div class="md-toolbar-tools" style="padding:5px 0px 0px 5px;">
+            <p>Friends</p>
+          </div>
+      </md-toolbar>
+    </md-sidenav>
+    <div class="message">
+      <md-toolbar class="md-theme-indigo" style="background-color:#87CEEB;">
+        <div class="md-toolbar-tools" style="padding:5px 500px 5px 250px">
+          <p>Conversations</p>
+        </div>  
+      </md-toolbar>
+      <div style="
+        height: 82vh;
+    overflow-y: scroll;">
+          <div class="chats">
+            <div layout="column">               
+              <div class="receiver">
+                <span>Hello!</span>
+              </div>
+              <div class="sender">
+                <p>Hey!</p>
+            </div>
+            </div>
+         </div>
+          <footer style="margin-top:50px">
+          <div class="message_type" >
+            <div layout layout-align="start center">
+              <div class="message-input" layout layout-align="start center">
+                <input class="input-box" type="text" name="input" placeholder="Type a message.." autocomplete="off" autofocus ng-model="typetext"></input>
+
+              </div>  
+              <md-button class="md-fab md-mini md-primary" aria-label="Use Android" style="background-color: #00838F;" ng-click="send(typetext).reset()">
+          <md-icon  style="color: white;">send</md-icon>
+        </md-button>
+            </div>
+            </div>
+        </footer>
+      </div>
+        </div>       
+  </section>
+</div>
