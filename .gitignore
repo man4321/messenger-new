@@ -2,6 +2,7 @@ logs/*
 !.gitkeep
 node_modules/
 app/lib/
+e2e-tests/
 tmp
 .DS_Store
 .idea

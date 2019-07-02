@@ -6,8 +6,9 @@
   "repository": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.7.5",
+    "angular": "^1.7.8",
     "angular-loader": "^1.7.5",
+    "angular-material": "^1.1.19",
     "angular-route": "^1.7.5",
     "html5-boilerplate": "0.0.1"
   },
