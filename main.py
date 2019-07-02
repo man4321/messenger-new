@@ -4,6 +4,7 @@ from google.appengine.api import users
 import webapp2
 import json
 from model import*
+from methods import*
 
 
 
@@ -137,6 +138,18 @@ class Messenger(webapp2.RequestHandler):
        
     def get(self):
         pass
+
+class ListMsg(webapp2.RequestHandler):
+    def post(self):
+        request=json.loads(self.request.body)
+        d=[];
+        query=User.fetch().get()
+        for i in query:
+            d.append({
+                'email': i.email,
+                'user_key': i.user_key
+                })
+        self.response.out(json.dumps(d))
         
 app=webapp2.WSGIApplication([
     ('/',Uplode),
@@ -144,5 +157,6 @@ app=webapp2.WSGIApplication([
     ('handlers/sign',SignUp),
     ('handlers/msg',Messenger),
     ('handlers/login',Login),
-    ('handlers/reciver',Messenger_R)
+    ('handlers/reciver',Messenger_R),
+    ('handlers/list',ListMsg)
     ],debug=True)
