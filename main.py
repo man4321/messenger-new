@@ -1,6 +1,6 @@
 from google.appengine.ext import ndb
 from google.appengine.datastore.datastore_query import Cursor
-from google.appengine.api import Users
+from google.appengine.api import users
 import webapp2
 import json
 from model import*

@@ -9,16 +9,10 @@ handlers:
 - url: /static
   static_dir: app/static
 
-
-
 - url: /components
   static_dir: app/components
 
 - url: /handlers.*
-  script: main.app
-  login : required
-
-- url: /
   script: main.app
   login : required
 
