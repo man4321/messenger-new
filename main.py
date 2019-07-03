@@ -197,7 +197,7 @@ class ListMsg(webapp2.RequestHandler):
         self.response.out(json.dumps(d))
         
 app=webapp2.WSGIApplication([
-    webapp2.Route('/',Putdata),
+    webapp2.Route('handlers/',Putdata),
     # ('handlers/main',MainPage),
     # ('handlers/sign',SignUp),
     ('handlers/msg',Messenger),
