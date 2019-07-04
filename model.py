@@ -8,6 +8,8 @@ class User(ndb.Model):
     username=ndb.StringProperty()
     password=ndb.StringProperty()
     email=ndb.StringProperty()
+    user_id=ndb.StringProperty()
+
 
 class Sender(ndb.Model):
     sender_key=ndb.KeyProperty(kind=User)

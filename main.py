@@ -136,6 +136,7 @@ from methods import*
 class Messenger_R(webapp2.RequestHandler):
     messeges_per_page=10
     def get(self):
+        login()
         #query=Feeds.query.fetch()   
         #print query
         cursor = Cursor(urlsafe=self.request.get('cursor'))
@@ -157,7 +158,10 @@ class Messenger_R(webapp2.RequestHandler):
 
 class Messenger(webapp2.RequestHandler):
     def post(self):
+        
+
         request=json.loads(self.request.body)
+        login()
         send=Sender()
         send.sender_key=ndb.Key(urlsafe=request.get('sender_key'))
         send.reciver_key=ndb.Key(urlsafe=request.get('reciver_key'))
@@ -168,14 +172,9 @@ class Messenger(webapp2.RequestHandler):
        
     def get(self):
         pass
-class Putdata(webapp2.RequestHandler):
-    def get(self):
-        #request=json.loads(self.request.body)
-        current_user=users.get_current_user()
-        user_email=current_user.email()
-        userid=current_user.user_id()
-        put_data(user_email,userid)
-        #self.redirect("/#!/chat")
+#class Putdata(webapp2.RequestHandler):
+    
+    
         
         
 
@@ -185,8 +184,10 @@ class Putdata(webapp2.RequestHandler):
 
 class ListMsg(webapp2.RequestHandler):
     def post(self):
-        request=json.loads(self.request.body)
 
+         
+        request=json.loads(self.request.body)
+        login()
         d=[];
         query=User.fetch().get()
         for i in query:
@@ -195,9 +196,10 @@ class ListMsg(webapp2.RequestHandler):
                 'user_key': i.user_key
                 })
         self.response.out(json.dumps(d))
+    
         
 app=webapp2.WSGIApplication([
-    webapp2.Route('/',Putdata),
+    #webapp2.Route('/',Putdata),
     # ('handlers/main',MainPage),
     # ('handlers/sign',SignUp),
     ('handlers/msg',Messenger),

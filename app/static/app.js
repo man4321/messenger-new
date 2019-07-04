@@ -1,21 +1,23 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-angular.module('chatApp', [
+var app=angular.module('myApp', [
   'ngRoute',
   'ngMaterial',
   'ngAnimate',
   'ngAria'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-  $routeProvider.when('/chat', {
-  	templateUrl: '/components/chat/chat.html'
+])
+app.config(function( '$routeProvider') {
+ // $locationProvider.hashPrefix('!');
+  $routeProvider.when('/msg', {
+  	templateUrl: 'components/chat/chat.html',
     // controller: 'ChatCtrl'
-    //controller: 'friend-list'
+   // controller: 'contact-list'
   })
-  .when('/', {
-  	template: '<center><h1>This is blank page<h1></center>'
+  .when('/',{
+    templateUrl:'index.html',
+    //controller: 'index-controller'
   })
+
 	//.otherwise({redirectTo: '/view1'});
-}]);
+});

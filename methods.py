@@ -14,6 +14,7 @@ def put_data(user_email,user_id):
 	user=User()
 	user.email=user_email
 	user.user_id=user_id
+	print user
 	user.put()
 
 def put_current_user(user_email):
@@ -21,3 +22,10 @@ def put_current_user(user_email):
 	if user1_key:
 		print(user1_key.urlsafe())
 		return user1_key.urlsafe()
+def login():
+        #request=json.loads(self.request.body)
+        current_user=users.get_current_user()
+        user_email=current_user.email()
+        userid=current_user.user_id()
+        put_data(user_email,userid)
+        print user_email
