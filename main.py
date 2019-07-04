@@ -199,7 +199,11 @@ class ListMsg(webapp2.RequestHandler):
     
         
 app=webapp2.WSGIApplication([
+<<<<<<< HEAD
     #webapp2.Route('/',Putdata),
+=======
+    webapp2.Route('handlers/',Putdata),
+>>>>>>> 860f56707ab614fcf4faaa50138038d24b107ff8
     # ('handlers/main',MainPage),
     # ('handlers/sign',SignUp),
     ('handlers/msg',Messenger),
