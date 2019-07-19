@@ -1,5 +1,5 @@
 <!--facebook header-->
-<div layout="row" ng-cloak style="height:100%" ng-app="chatApp">
+<div layout="row" ng-cloak style="height:100%">
     <section layout="row" flex>
     <md-toolbar style="background-color:#0000CD">
       <div layout layout-align="start center">
@@ -13,7 +13,7 @@
   </section>
   </div>
 <!--facebook header end-->
-<div layout="column" ng-cloak style="height:100%" ng-app="chatApp">
+<div layout="column" style="height:100%" >
   <section layout="row" flex>
     <md-sidenav class="md-sidenav-left" md-component-id="left"
                 md-disable-backdrop="" md-whiteframe="4" md-is-locked-open="true" style="max-height:100%; overflow-x: hidden; background-color: white; width:25%;height: -webkit-fill-available">
@@ -26,13 +26,16 @@
       <!--sidenav end-->
      <!--friend list-->
       <md-content>
-        <md-list flex>
+        <md-list flex >
+          
       <md-list-item ng-click="user2(x)" ng-repeat="x in list">
         <div class="md-list-item-text">
           <span>{{x.email}}</span>
         </div>
+
         <md-divider style="width: 100%"></md-divider>
       </md-list-item>
+    
         <md-divider style="width: 100%"></md-divider>
       </md-list>
     </md-content>

@@ -173,15 +173,6 @@ class Messenger(webapp2.RequestHandler):
     def get(self):
         pass
 #class Putdata(webapp2.RequestHandler):
-    
-    
-        
-        
-
-
-
-        
-
 class ListMsg(webapp2.RequestHandler):
     def post(self):
 
@@ -196,18 +187,19 @@ class ListMsg(webapp2.RequestHandler):
                 'user_key': i.user_key
                 })
         self.response.out(json.dumps(d))
+    def get(self):
+        print '##############################################'
+        login()
+        LOGIN_HTML = open('app/index.html').read()
+        self.response.out.write(LOGIN_HTML)
     
         
 app=webapp2.WSGIApplication([
-<<<<<<< HEAD
-    #webapp2.Route('/',Putdata),
-=======
-    webapp2.Route('handlers/',Putdata),
->>>>>>> 860f56707ab614fcf4faaa50138038d24b107ff8
+    ('/.*',ListMsg),
     # ('handlers/main',MainPage),
     # ('handlers/sign',SignUp),
-    ('handlers/msg',Messenger),
+    ('handlers/msg', Messenger),
     # ('handlers/login',Login),
     ('handlers/reciver',Messenger_R),
-    ('handlers/list',ListMsg)
+    # ('handlers/list',ListMsg)
     ],debug=True)

@@ -23,9 +23,9 @@ def put_current_user(user_email):
 		print(user1_key.urlsafe())
 		return user1_key.urlsafe()
 def login():
-        #request=json.loads(self.request.body)
-        current_user=users.get_current_user()
-        user_email=current_user.email()
-        userid=current_user.user_id()
-        put_data(user_email,userid)
-        print user_email
+	#request=json.loads(self.request.body)
+	current_user=users.get_current_user()
+	user_email=current_user.email()
+	userid=current_user.user_id()
+	put_data(user_email,userid)
+	print user_email
